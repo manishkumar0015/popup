@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup</title>
+</head>
+<style>
+    /* Modal */
+    
+    .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(19, 47, 67, 0.5);
+        z-index: 999;
+        visibility: hidden;
+        /* opacity: 0; */
+        -webkit-transition: all .25s;
+        transition: all .25s;
+        overflow: auto;
+    }
+    
+    .modal .modal__dialog {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        -ms-align-items: center;
+        align-items: center;
+        padding: 0 30px;
+        position: relative;
+        min-height: calc(100% - 60px);
+    }
+    
+    .modal .modal__content {
+        max-width: 810px;
+        width: 100%;
+        background-color: #fff;
+        padding: 35px 70px;
+        position: relative;
+        -webkit-transform: translateY(-100px);
+        -moz-transform: translateY(-100px);
+        transform: translateY(-100px);
+        -webkit-transition: all .3s ease-out;
+        transition: all .3s ease-out;
+        margin: 30px auto;
+    }
+    
+    .modal .close {
+        position: absolute;
+        top: 0;
+        right: -40px;
+        width: 40px;
+        height: 40px;
+        line-height: 1;
+        color: #fff;
+        background-color: #65D08D;
+    }
+    
+    .modal .close:hover {
+        background: #132F43;
+    }
+    
+    .modal h2 {
+        line-height: 1.25;
+    }
+    
+    .modal-open {
+        overflow: hidden;
+    }
+    
+    .modal-open .modal.show {
+        visibility: visible;
+        opacity: 1;
+    }
+    
+    .modal.show .modal__content {
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        transform: translateY(0);
+    }
+    
+    .modal.modal--sm .modal__content {
+        max-width: 500px;
+    }
+    
+    .modal.modal--member .modal__content {
+        padding: 0;
+    }
+    
+    .section--hero .row {
+        display: flex;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    form input {
+        padding: 15px 15px;
+        margin-bottom: 10px;
+        font-size: 15px;
+        outline: none;
+        border: 2px solid lightgreen;
+    }
+    
+    form a {
+        text-align: center;
+        background-color: lightgreen;
+        padding: 10px 10px;
+        color: black;
+        font-size: 15px;
+    }
+    
+    .btn-popup {
+        background-color: lightgreen;
+        padding: 15px 10px;
+        border-radius: 5px;
+        position: relative;
+        top: -79px;
+        color: black;
+    }
+</style>
+
+<body>
+
+
+    <section class="section section--hero">
+        <div class="wrap">
+            <div class="row">
+                <div class="hero__contant" style="width: 40%;">
+                    <h1>Unearthing Sustainable Ways to Mine</h1>
+                    <p>Minception helps exploration, mining and mineral companies optimize their growth through multidisciplinary consultancy services.</p>
+                    <div class="popup">
+                        <div class="popup__btn">
+                            <a href="#">Click Here</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero__block" style="width: 60%;">
+                    <img src="images/download.png" alt="">
+                </div>
+            </div>
+    </section>
+    <section class="section section--hero">
+        <div class="wrap">
+            <div class="row">
+                <div class="hero__contant" style="width: 40%;">
+                    <h1>Unearthing Sustainable Ways to Mine</h1>
+                    <p>Minception helps exploration, mining and mineral companies optimize their growth through multidisciplinary consultancy services.</p>
+                    <div class="popup">
+                        <div class="popup__btn">
+                        </div>
+                        <a href="#">Click Here</a>
+                    </div>
+                </div>
+                <div class="hero__block" style="width: 60%;">
+                    <img src="images/download.png" alt="">
+                </div>
+            </div>
+    </section>
+
+    <a href="javascript:void(0);" role="button" class="btn btn-popup" data-modal="#download_brochure">Download Brochure</a>
+    <div id="download_brochure" class="modal">
+        <div class="modal__dialog">
+            <div class="modal__content">
+                <a href="javascript:void(0);" role="button" class="close" data-close="true">
+                    <svg width="40" height="40" viewBox="0 0 40 40">
+                        <path fill="currentColor" d="M29.165,28.104c0.293,0.293,0.293,0.768,0,1.061c-0.146,0.146-0.338,0.22-0.53,0.22s-0.384-0.073-0.53-0.22 l-8.105-8.104l-8.105,8.104c-0.146,0.146-0.338,0.22-0.53,0.22s-0.384-0.073-0.53-0.22c-0.293-0.293-0.293-0.768,0-1.061L18.938,20 l-8.105-8.105c-0.293-0.293-0.293-0.768,0-1.061s0.768-0.293,1.061,0l8.105,8.105l8.105-8.105c0.293-0.293,0.768-0.293,1.061,0 s0.293,0.768,0,1.061L21.06,20L29.165,28.104z"></path>
+                    </svg>
+                </a>
+                <form action="#">
+                    <h2>Download Brochure</h2>
+                    <input type="text" placeholder="Entr Your Name">
+                    <input type="text" placeholder="Entr Your Email">
+                    <input type="text" placeholder="Entr Your content">
+                    <input type="text" placeholder="Entr Your Address">
+                    <a href="#" class="btn">Submit</a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".btn-popup").click(function() {
+                var activePopup = $(this).attr('data-modal');
+                $("body").addClass('modal-open');
+                $(activePopup).addClass('show');
+            });
+            $(".close").click(function() {
+                $(".modal").removeClass('show');
+                $("body").addClass('modal-open')
+            });
+        });
+    </script>
+</body>
+
+</html>
